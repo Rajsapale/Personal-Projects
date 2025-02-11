@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="cal.css" />
+    <title>Calculator</title>
+  </head>
+  <body>
+    <div class="main">
+    <input readonly placeholder="0" type="text" id="inp" /><br /><br />
+    
+      <div class="all-btn">
+        <button class="big-btn" onclick="clr()">CLR</button>
+        <button class="big-btn orange "  onclick="del()">DEL</button><br>
+        <button class="big-btn yellow"  onclick="root()">√x</button>
+        <button class="big-btn green"  onclick="eql()">=</button><br>
+        <button class="btn" onclick="addAt(1)">1</button>
+        <button class="btn" onclick="addAt(2)">2</button>
+        <button class="btn" onclick="addAt(3)">3</button><br />
+        <button class="btn" onclick="addAt(4)">4</button>
+        <button class="btn" onclick="addAt(5)">5</button>
+        <button class="btn" onclick="addAt(6)">6</button><br />
+        <button class="btn" onclick="addAt(7)">7</button>
+        <button class="btn" onclick="addAt(8)">8</button>
+        <button class="btn" onclick="addAt(9)">9</button><br />
+        <button class="btn-0" onclick="addAt(0)">0</button>
+        <button class="btn-dot" onclick="addAt('.')">.</button><br>
+        <div class="signs">
+        <button class="sign-btn" onclick="addAt('+')">+</button><br />
+        <button class="sign-btn" onclick="addAt('-')">-</button><br />
+        <button class="sign-btn" onclick="addAt('*')">*</button><br />
+        <button class="sign-btn" onclick="addAt('/')">/</button><br /></div>
+      </div>
+    </div>
+    <script>
+      var inp = document.getElementById("inp");
+      function addAt(a) {
+        inp.value = inp.value + a;
+      }
+      function eql() {
+        inp.value = eval(inp.value);
+      }
+      function del() {
+        inp.value = inp.value.substring(0, inp.value.length - 1);
+      }
+      function clr() {
+        inp.value = "";
+      }
+      function root() {
+        inp.value = Math.sqrt(inp.value);
+      }
+    </script>
+  </body>
+</html>

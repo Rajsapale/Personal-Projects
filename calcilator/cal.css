@@ -1,0 +1,116 @@
+*{
+    margin: 0;
+    box-sizing: border-box;
+    font-weight: bolder;
+}
+body{
+    
+    justify-items: center;
+    background-color: rgb(243, 178, 14);
+}
+.main{
+    position: relative;
+    top: 150px;
+    height: 405px;
+    width: 300px;
+    /* background-image: linear-gradient(45deg,rgb(62, 55, 79),white,rgb(62, 55, 79),white,rgb(62, 55, 79)); */
+    background-color: rgb(179, 154, 203);
+    border-radius: 15px;
+    box-shadow: inset 5px 5px 1px rgb(54, 39, 79);
+   
+}
+#inp{
+    margin-top: 11px;
+    margin-left: 11px;
+    height: 100px;
+    width: 92%;
+    border: none;
+    background-color: rgb(47, 0, 158);
+    box-shadow: 5px 5px 1px cornsilk;
+    border-radius: 15px;
+    font-family:fantasy;
+    font-weight: normal;
+    font-size: 2rem;
+    color: aquamarine;
+    padding-left: 7px;
+}
+::placeholder{
+    color: aquamarine;
+}
+.all-btn{
+margin: 10px;
+}
+.big-btn{
+    height: 30px;
+    width: 45%;
+    background-color: rgb(255, 34, 0);
+    border-radius: 5px;
+    border: solid;
+    margin: 5px;
+    box-shadow:  2px 2px 5px rgb(54, 39, 79);
+    border-inline-start: 4px solid rgb(247, 247, 247);
+    /* box-shadow: 5px 5px 1px cornsilk; */
+}
+.orange{
+    background-color: rgb(255, 132, 0);
+}
+.yellow{
+    background-color: rgb(255, 225, 0);
+}
+.green{
+    background-color: rgb(91, 254, 3);
+}
+.btn{
+    height: 40px;
+    width: 60px;
+    margin-top: 4px;
+    margin-left: 5px;
+    background-color: rgb(179, 154, 203);
+    border-radius: 5px;
+    box-shadow:  2px 2px 5px rgb(54, 39, 79);
+    border: rgb(54, 39, 79) solid;
+    color: aliceblue;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1rem;
+}
+.signs{
+    position: relative;
+    left: 210px;
+    bottom: 170px;
+ }
+ .sign-btn{
+    height: 39px;
+    width: 60px;
+    margin-bottom: 5px;
+    border-radius: 5px;
+    background-color:rgb(54, 39, 79);
+    font-weight: bolder;
+    color: aliceblue;
+    font-size: 1rem;
+ }
+ .btn-0{
+    height: 35px;
+    width: 140px;
+    margin-top: 7px;
+    margin-left: 5px;
+    box-shadow:  2px 2px 5px rgb(54, 39, 79);
+    border: rgb(54, 39, 79) solid;
+    color: aliceblue;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1rem;
+    background-color: rgb(179, 154, 203);
+    border-radius: 5px;
+}
+.btn-dot{
+    height: 35px;
+    width: 48px;
+    margin-top: 7px;
+    margin-left: 5px;
+    box-shadow:  2px 2px 5px rgb(54, 39, 79);
+    border: rgb(54, 39, 79) solid;
+    color: aliceblue;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1rem;
+    background-color: rgb(179, 154, 203);
+    border-radius: 5px;
+}
