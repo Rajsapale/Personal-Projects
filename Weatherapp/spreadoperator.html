@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SpreadOperator</title>
+</head>
+<body>
+    <h1>
+        Spread Operator
+    </h1>
+    <script>
+        var stu={
+            id:1,
+            name:"raj",
+            city:"ajara"
+        }
+        var stuInfo={
+            age:23,
+            stu                 //we can store opbject like this in other object and it become child of stuInfo object
+        }
+
+        var Info={
+            course:"Electronics",...stuInfo     //... is known as spread operator.it   don't create stuInfo as sub object of Info and it split all attributes in parent object 
+        } 
+
+        console.log(Info); 
+        console.log(stuInfo);
+    </script>
+</body>
+</html>

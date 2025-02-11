@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather forcast</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <span class="search">
+        <div class="nav-search" >
+            <input placeholder="Search City" class="search-input" id="serch-inp">
+            <button class="search-icon" onclick="Weather(),show()">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+        </div>
+    </span>
+    
+    <div class="main" id="box">
+        
+        <div class="sub-box" id="left">
+            <div class="basic" >
+                <h1 id="info-name"></h1>
+                <div class="sub-tile"id="info-log"></div>
+                <div class="sub-tile"id="info-lat"></div>
+                <div class="sub-tile" id="info-vis"></div>
+                <div class="sub-tile" id="info-sea"></div>
+                <div class="sub-tile" id="info-grd"></div>
+
+            </div>
+            <div class="tile" id="tile-one"></div>
+            <div class="tile" id="tile-two"></div>
+        </div>
+        <div class="sub-box" id="right">
+            <div class="add-on">
+                <div class="column " id="first-column">
+                    <div class="temp">
+                        <i class="fa-solid fa-temperature-half"></i>
+                    </div>
+                    <div class="wiget" id="tp"></div>
+                </div>
+                <div class="column " id="second-column">
+                    <div class="humid">
+                        <i class="fa-solid fa-droplet"></i>
+                    </div>
+                    <div class="wiget" id="hum"></div>
+                </div>
+                <div class="column " id="third-column">
+                    <div class="air">
+                        <i class="fa-solid fa-wind"></i>
+                    </div>
+                    <div class="wiget" id="wind"></div>
+                </div>
+            </div>
+            <div class="map"></div>
+        </div>
+    </div>
+    <script>
+
+        var box=document.getElementById("box");
+        box.style.display="none";
+        
+        function show(){
+            box.style.display="flex";
+        }
+
+       async function Weather(){
+        var city=document.getElementById("serch-inp").value;
+        var api=`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=7cd8beb8bf6d5a0d3031ef15e8cee8f6`;
+        var d = await fetch(api);
+        var data= await d.json();
+        var t=Math.ceil(data.main.temp-273);
+        var h = Math.ceil(data.main.humidity);
+        var w = Math.ceil(data.wind.speed);
+
+        document.getElementById("tp").innerHTML= t+" °C";
+        if(t>15)
+
+        document.getElementById("hum").innerHTML= h + " %";
+        document.getElementById("wind").innerHTML= w +" km/h";
+
+        document.getElementById("info-name").innerHTML=city;
+        document.getElementById("info-log").innerHTML="Latitude : " + data.coord.lon;
+        document.getElementById("info-lat").innerHTML="Longitude : " + data.coord.lat;
+        document.getElementById("info-vis").innerHTML="Visibility : " + data.visibility;
+        document.getElementById("info-sea").innerHTML="Sea Level : " + data.main.sea_level;
+        document.getElementById("info-grd").innerHTML="Ground Level : " + data.main.grnd_level;
+
+        document.getElementById("tile-one").innerHTML="Weather Forcast : " + data.weather[0].description;
+
+        let f= document.getElementById("first-column");
+        
+        if(t<=0 || t<=20){
+        f.style.backgroundColor="#2BD9FE"
+        }else if(21<=t && t<=25){
+        f.style.backgroundColor="#53DD6C"
+        }else{ 
+            f.style.backgroundColor="#B80C09"
+        }
+
+        let hud = document.getElementById("second-column");
+
+        if(h<=0 || h<=29){
+        hud.style.backgroundColor="#2BD9FE"
+        }else if(30<= h && h <=50){
+        hud.style.backgroundColor="#53DD6C"
+        }else{ 
+            hud.style.backgroundColor="#B80C09"
+        }
+
+        let wd = document.getElementById("third-column");
+
+        if(w<=0 || w<=5){
+        wd.style.backgroundColor="#2BD9FE"
+        }else if(6<= w && w <=11){
+        wd.style.backgroundColor="#53DD6C"
+        }else{ 
+        wd.style.backgroundColor="#B80C09"
+        }
+        }
+    </script>
+</body>
+</html>
