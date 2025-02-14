@@ -1,0 +1,84 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    font-weight: bolder;
+    font-size: x-large;
+}
+body{
+    background-color: #2fac99;
+    justify-items: center;
+}
+
+.main-box{
+    height: 300px;
+    width:300px ;
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+    top: 136px;
+    /* left: 619px; */
+    backdrop-filter: blure;
+}
+
+.box{
+    
+    display: flex;
+    height: 30%;
+    width: 30%;
+    margin-left: 5px;
+    margin-right: 5px;
+    border: none;
+    box-shadow: 0px 5px 10px rgb(99, 118, 99);
+    background-color: black;
+    font-size:3rem;
+    align-items: center;
+    justify-content: center;
+
+}
+.reset{
+    position: relative;
+    /* left: 620px; */
+    top: 200px;
+    width:300px ;
+    color: rgb(250, 250, 250) ;
+    text-shadow:2px 2px 5px black;
+    background-color: rgb(110, 42, 62);
+    border: none;
+    height:60px;
+
+}
+.winner{
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
+}
+
+.hide{
+    display: none;
+}
+#msg{
+    margin-top: 20px;
+    color: cornsilk;
+    font-size: 3.5rem;
+    font-family:  Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+.name{
+    text-align: center;
+    height: 100vh;
+    width: 250px;
+    background-color: indianred;
+    box-shadow: 0px 5px 100px black;
+    position: fixed;
+    left: 0px;
+    color: azure;
+    align-content: center;
+    
+}
+.name h1{
+    font-family:  Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 5rem;
+    color: brown;
+    text-shadow: 2px 2px 10px black;
+}
